@@ -12,7 +12,7 @@ CHROMA_PATH = "chroma"
 st.set_page_config(page_title="RAG Query System")
                    
 def response(question):
-    loader = CSVLoader("data/oscar_text.csv", encoding="utf-8")
+    loader = CSVLoader("oscar_text.csv", encoding="utf-8")
     documents = loader.load()
     db = Chroma.from_documents(documents, OpenAIEmbeddings(), persist_directory=CHROMA_PATH)
     retriever = db.as_retriever(search_kwargs={"k": 3})
