@@ -3,4 +3,3 @@ chromadb
 tiktoken
 openai
 streamlit
-sqlite3=== 3.35.0
